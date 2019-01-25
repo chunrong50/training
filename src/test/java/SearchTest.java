@@ -3,6 +3,7 @@ import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import page.MainPage;
 import page.SearchPage;
@@ -42,11 +43,12 @@ public class SearchTest {
 
     }
 
-    @Test
-    public void 判断自选属性() {
-        String content = searchPage.searchKey("pdd").addSelected();
+    @ParameterizedTest
+    @CsvFileSource(resources = "/data/SearchTest.csv")
+    public void 判断自选属性(String keyword) {
+        String content = searchPage.searchKey(keyword).Selected();
         assertThat(content, equalTo("com.xueqiu.android:id/followed_btn"));
-        searchPage.searchKey("pdd").addSelected();  //数据恢复,为下次用例执行成功
+        searchPage.searchKey(keyword).Selected();  //数据恢复,为下次用例执行成功
     }
 
 

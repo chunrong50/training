@@ -4,16 +4,16 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import page.MainPage;
-import page.SelfChoosePage;
+import page.SeletedPage;
 
 import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class SelfChooseTest {
+public class SeletedTest {
     static MainPage mainPage;
-    static SelfChoosePage selfChoosePage;
+    static SeletedPage SeletedPage;
 
 
     @BeforeAll
@@ -32,16 +32,17 @@ public class SelfChooseTest {
     @ParameterizedTest
     @CsvSource({"alibaba,阿里巴巴"
     })
-    public void addChoiceTest(String stock, String expection) {
-        selfChoosePage = mainPage.gotoSelfChoicePage();
-        selfChoosePage.addStock(stock);
-        ArrayList<String> arrayList = selfChoosePage.getAllStockName();
+    public void addSeletedTest(String stock, String expection) {
+        SeletedPage = mainPage.gotoSeletedPage();
+        SeletedPage.addStock(stock);
+        ArrayList<String> arrayList = SeletedPage.getAllStockName();
         assertThat(arrayList.get(0), equalTo(expection));
     }
 
 
     @AfterAll
-    static void after() {
-        selfChoosePage.gotoSearchPage().searchKey("alibaba").rmSelected();
+    static void rmSeletedTest() {
+        SeletedPage.gotoSearchPage().searchKey("alibaba").rmSelected();
     }
 }
+

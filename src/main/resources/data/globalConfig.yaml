@@ -1,0 +1,15 @@
+---
+xueqiuConfig:
+  username: XXXXX
+  password: dddd
+appiumConfig:
+  url: http://127.0.0.1.4723/wd/hub
+  wait: 6
+  capabilities:
+    platformName: android
+    deviceName: ddd
+    platformVersion: 6.0
+    appPackage: com.xueqiu.android
+    appActivity: .view.WelcomActivityAlias
+    autoGrantPermissions: true
+    app: /Users/jfpay/Desktop/apk/com.xueqiu.android.apk

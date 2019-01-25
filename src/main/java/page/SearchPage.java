@@ -24,7 +24,7 @@ public class SearchPage extends BasePage {
     }
 
     /**
-     * 获取搜索列表的文本内容
+     * 获取搜索列表的综合处的文本内容
      *
      * @return
      */
@@ -48,7 +48,7 @@ public class SearchPage extends BasePage {
      *
      * @return 自选处的resource-id的属性值
      */
-    public String addSelected() {
+    public String Selected() {
 
         WebElement e = null;
         e = finds(select).get(0);
@@ -61,6 +61,11 @@ public class SearchPage extends BasePage {
 
     }
 
+    /**
+     * 删除自选
+     *
+     * @return
+     */
     public String rmSelected() {
         WebElement e = null;
         String attribute = null;

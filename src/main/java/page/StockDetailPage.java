@@ -16,9 +16,9 @@ public class StockDetailPage extends BasePage {
     }
 
 
-    public SelfChoosePage gotoSelfChoosePage() {
+    public SeletedPage gotoSelfChoosePage() {
         find(back).click();
-        return new SelfChoosePage();
+        return new SeletedPage();
     }
 
 }

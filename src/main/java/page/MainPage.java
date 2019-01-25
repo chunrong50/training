@@ -24,10 +24,10 @@ public class MainPage extends BasePage {
 
     }
 
-    public SelfChoosePage gotoSelfChoicePage() {
+    public SeletedPage gotoSeletedPage() {
 
 
         find(selfAdd).click();
-        return new SelfChoosePage();
+        return new SeletedPage();
     }
 }

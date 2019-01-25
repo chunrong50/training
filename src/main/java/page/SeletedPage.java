@@ -8,7 +8,7 @@ import java.util.ArrayList;
 /**
  * Created by jfpay on 19/1/15.
  */
-public class SelfChoosePage extends BasePage {
+public class SeletedPage extends BasePage {
     private By search = By.id("action_create_cube");
     private By stock = By.id("portfolio_stockName");
 
@@ -32,10 +32,10 @@ public class SelfChoosePage extends BasePage {
      * @return
      */
 
-    public SelfChoosePage addStock(String stock) {
+    public SeletedPage addStock(String stock) {
         SearchPage searchPage = gotoSearchPage().searchKey(stock);
-        searchPage.addSelected();
-        searchPage.gotoMainPage().gotoSelfChoicePage();
+        searchPage.Selected();
+        searchPage.gotoMainPage().gotoSeletedPage();
         return this;
 
     }
@@ -47,7 +47,7 @@ public class SelfChoosePage extends BasePage {
      * @param stock
      * @return
      */
-    public SelfChoosePage rmStock(String stock) {
+    public SeletedPage rmStock(String stock) {
         ArrayList<String> arrayList = getAllStockName();
         for (String text : arrayList)
             if (stock.equals(text)) {
